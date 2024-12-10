@@ -139,73 +139,104 @@ $conn->close();
     <div class="profile-item"><span>Contact Number:</span> <?= htmlspecialchars($row['contact_number']); ?></div>
     <div class="profile-item"><span>Business Email:</span> <?= htmlspecialchars($row['business_email']); ?></div>
 </div>
-<table border="1" cellspacing="0" cellpadding="10">
-    <tr>
-        <th>Create a post:</th>
-    </tr>
-    <form action="profile.php" method="post" autocomplete="off" enctype="multipart/form-data">
-        <tr>
-            <td><label for="title">Title:</label></td>
-            <td><textarea name="title" id="title" required></textarea></td>
-        </tr>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #post-form {
+            display: none; /* Keep the form hidden by default */
+        }
+    </style>
+</head>
 
-        <tr>
-            <td><label for="description">Description:</label></td>
-            <td><textarea name="description" id="description" required></textarea></td>
-        </tr>
+<body>
+    <div class="container mt-5">
+        <!-- Create Post Button -->
+        <div class="text-center">
+            <button class="btn btn-primary" id="create-post-btn">Create Post</button>
+        </div>
 
-        <tr>
-            <td><label for="category">Category:</label></td>
-            <td>
-                <select name="category" id="category" required>
-                    <option value="lodge">Lodge</option>
-                    <option value="pension">Pension</option>
-                    <option value="transient">Transient</option>
-                </select>
-            </td>
-        </tr>
+        <!-- Hidden Post Form -->
+        <div id="post-form" class="mt-4">
+            <form action="profile.php" method="post" autocomplete="off" enctype="multipart/form-data">
+                <table class="table table-borderless">
+                    <tr>
+                        <td><label for="title">Title:</label></td>
+                        <td><textarea name="title" id="title" class="form-control" required></textarea></td>
+                    </tr>
 
-        <tr>
-            <td><label for="price_per_day">Price Per Day:</label></td>
-            <td><input type="number" name="price_per_day" id="price_per_day" step="0.01" required></td>
-        </tr>
+                    <tr>
+                        <td><label for="description">Description:</label></td>
+                        <td><textarea name="description" id="description" class="form-control" required></textarea></td>
+                    </tr>
 
-        <tr>
-            <td><label for="facilities">Facilities:</label></td>
-            <td>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="facilities[]" value="Wi-Fi"> Wi-Fi</label>
-                    <label><input type="checkbox" name="facilities[]" value="Parking"> Parking</label>
-                    <label><input type="checkbox" name="facilities[]" value="Room Service"> Room Service</label>
-                    <label><input type="checkbox" name="facilities[]" value="Laundry"> Laundry</label>
-                    <label><input type="checkbox" name="facilities[]" value="Air Conditioning"> Air Conditioning</label>
-                    <label><input type="checkbox" name="facilities[]" value="Kitchenette"> Kitchenette</label>
-                    <label><input type="checkbox" name="facilities[]" value="Swimming Pool"> Swimming Pool</label>
-                    <label><input type="checkbox" name="facilities[]" value="Gym"> Gym</label>
-                </div>
-            </td>
-        </tr>
+                    <tr>
+                        <td><label for="category">Category:</label></td>
+                        <td>
+                            <select name="category" id="category" class="form-control" required>
+                                <option value="lodge">Lodge</option>
+                                <option value="pension">Pension</option>
+                                <option value="transient">Transient</option>
+                            </select>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td><label for="image">Images:</label></td>
-            <td><input type="file" name="image[]" id="image" accept=".jpg, .jpeg, .png" multiple required></td>
-        </tr>
+                    <tr>
+                        <td><label for="price_per_day">Price Per Day:</label></td>
+                        <td><input type="number" name="price_per_day" id="price_per_day" class="form-control" step="0.01" required></td>
+                    </tr>
 
-        <tr>
-            <td><label for="contact_email">Contact Email:</label></td>
-            <td><input type="email" name="contact_email" id="contact_email" placeholder="@gmail.com" required></td>
-        </tr>
+                    <tr>
+                        <td><label for="facilities">Facilities:</label></td>
+                        <td>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="facilities[]" value="Wi-Fi"> Wi-Fi</label>
+                                <label><input type="checkbox" name="facilities[]" value="Parking"> Parking</label>
+                                <label><input type="checkbox" name="facilities[]" value="Room Service"> Room Service</label>
+                                <label><input type="checkbox" name="facilities[]" value="Laundry"> Laundry</label>
+                                <label><input type="checkbox" name="facilities[]" value="Air Conditioning"> Air Conditioning</label>
+                                <label><input type="checkbox" name="facilities[]" value="Kitchenette"> Kitchenette</label>
+                                <label><input type="checkbox" name="facilities[]" value="Swimming Pool"> Swimming Pool</label>
+                                <label><input type="checkbox" name="facilities[]" value="Gym"> Gym</label>
+                                <label><input type="checkbox" name="facilities[]" value="others"> Others</label>
+                            </div>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td><label for="facebook_link">Facebook Link:</label></td>
-            <td><input type="url" name="facebook_link" id="facebook_link" placeholder="https://facebook.com/yourpage" required></td>
-        </tr>
+                    <tr>
+                        <td><label for="image">Images:</label></td>
+                        <td><input type="file" name="image[]" id="image" accept=".jpg, .jpeg, .png" multiple class="form-control" required></td>
+                    </tr>
 
-        <tr>
-            <td colspan="2"><button type="submit" name="submit">Submit</button></td>
-        </tr>
-    </form>
-</table>
+                    <tr>
+                        <td><label for="contact_email">Contact Email:</label></td>
+                        <td><input type="email" name="contact_email" id="contact_email" class="form-control" placeholder="@gmail.com" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="facebook_link">Facebook Link:</label></td>
+                        <td><input type="url" name="facebook_link" id="facebook_link" class="form-control" placeholder="https://facebook.com/yourpage" required></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <button type="submit" name="submit" class="btn btn-success">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Show the form when the "Create Post" button is clicked
+        document.getElementById('create-post-btn').addEventListener('click', function () {
+            document.getElementById('post-form').style.display = 'block';
+            this.style.display = 'none'; // Hide the button
+        });
+    </script>
+</body>
+
+</html>
 
 <h3>Uploaded Images</h3>
 <table border="1" cellspacing="0" cellpadding="10">

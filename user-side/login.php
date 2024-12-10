@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['signup'])) {
     <title>Login / Register - Puerto Princesa Traveloca</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
 </head>
 
 <body>
@@ -84,10 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['signup'])) {
                             <li class="nav-item">
                                 <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
                                     aria-controls="login" aria-selected="true">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab"
-                                    aria-controls="signup" aria-selected="false">Register</a>
                             </li>
                         </ul>
                     </div>

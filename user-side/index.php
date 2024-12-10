@@ -3,34 +3,21 @@ session_start();
 ?>
 
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Puerto Princesa Traveloca</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/member/ivn.png" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@350;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <link href="css/index.css" rel="stylesheet">
-</head>
-
-<body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand d-flex align-items-center" href="#page-top">
-            <img src="assets/img/traveloca.png" height="50" class="d-inline-block align-top" alt="Logo">
-            <h6>Puerto Princesa Traveloca</h6>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">Traveloca</a></h2>
+        <ul class="links">
+        <li class="nav-item">
                     <a class="nav-link active actives" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
@@ -45,7 +32,7 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="myabout.html">About Us</a>
                 </li>
-
+                
                 <?php if (isset($_SESSION['user_data'])): ?>
                     <button id="profileButton">Profile</button>
                     <div id="profilePopup" style="display: none;">
@@ -63,7 +50,31 @@ session_start();
             </ul>
         </div>
     </nav>
+    </header>
+    <section class="hero-section">
+      <div class="hero">
+        <h2>Welcome! to Puerto Princesa Traveloca</h2>
+        <p>
+          travel and find the best place to stay in Puerto Princesa City, Palawan
 
+        </p>
+        <div class="buttons">
+          <a href="#" class="join">Join Now</a>
+          <a href="#" class="learn">Learn More</a>
+        </div> 
+      </div>
+      <!-- <div class="container-fluid p-0 mt-5">
+        <section id="welcome1" class="full-height section1 d-flex flex-column align-items-center justify-content-between text-white bg-light">
+            <div class="carousel slide" data-ride="carousel" id="heroCarousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/travel.png" class="d-block w-100" alt="...">
+                </div>
+                </div>
+            </div>
+        </section> -->
+    </div>
+    </section>
 
     <div class="container-fluid p-0 mt-5">
         <section id="welcome1" class="full-height section1 d-flex flex-column align-items-center justify-content-between text-white bg-light">

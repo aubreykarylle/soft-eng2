@@ -1,93 +1,253 @@
-html {
-    scroll-behavior: smooth;
+/* Importing Google font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-.actives {
-    border-bottom: 3px solid #0e3825;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://localhost/user-side/assets/img/travelulu.jpg"); /* Path to your image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  filter: blur(1px); /* Blur effect */
+  z-index: -1; /* Ensure the blur effect stays behind the content */
 }
 
-.full-height {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.icon {
-    font-size: 32px;
-}
-
-.taks-color {
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.7rem;
-    padding: 10px 20px;
-    background-color: #ff4785;
-    border-radius: 5px;
-}
-
-#search-container {
-    position: relative;
-}
-
-#search-input {
-    max-width: 200px;
-    transition: all 0.3s ease;
-}
-
-/* Hide the navbar when scrolled down */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: top 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
 }
 
-.navbar.scrolled {
-    top: -80px; /* Adjust this value to match your navbar height */
+.navbar .logo a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #000000;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 35px;
+}
+
+.navbar .links a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #0f0e0e;
+  padding: 10px 0;
+  transition: 0.2s ease;
+}
+
+.navbar .links a:hover {
+  color: #47b2e4;
+}
+
+.navbar .buttons a {
+  text-decoration: none;
+  color: #030202;
+  font-size: 1rem;
+  padding: 15px 0;
+  transition: 0.2s ease;
+}
+
+.navbar .buttons a:not(:last-child) {
+  margin-right: 30px;
+}
+
+.navbar .buttons .signin:hover {
+  color: #47b2e4;
+}
+
+.navbar .buttons .signup {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 0.375rem;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.navbar .buttons .signup:hover {
+  background-color: #47b2e4;
+  color: #fff;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 95vh;
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section .hero {
+  max-width: 50%;
+  color: #100e0e;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #292727;
+}
+
+.hero-section .img img {
+  width: 517px;
+}
+
+.hero-section .buttons {
+  margin-top: 40px;
+}
+
+.hero-section .buttons a {
+  text-decoration: none;
+  color: #0e0d0d;
+  padding: 12px 24px;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+  display: inline-block;
+}
+
+.hero-section .buttons a:not(:last-child) {
+  margin-right: 15px;
+}
+
+.buttons .join {
+  background-color: #47b2e4;
+}
+
+.hero-section .buttons .learn {
+  border: 1px solid #fff;
+  border-radius: 0.375rem;
+}
+
+.hero-section .buttons a:hover {
+  background-color: #47b2e4;
+}
+
+/* Hamburger menu styles */
+#menu-toggle {
+  display: none;
+}
+
+#hamburger-btn {
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  order: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar .logo a {
+    font-size: 1.5rem;
+  }
+
+  .links {
+    position: fixed;
+    left: -100%;
+    top: 75px;
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    background: #175d69;
+    flex-direction: column;
+    transition: 0.3s ease;
+  }
+
+  .navbar #menu-toggle:checked ~ .links {
+    left: 0;
+  }
+
+  .navbar #hamburger-btn {
+    display: block;
+  }
+
+  .header .buttons {
+    display: none;
+  }
+
+  .hero-section .hero {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-section img {
+    display: none;
+  }
 }
 
 #profileButton {
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
- 
-#profileButton:hover {
-    background-color: #e0e0e0;
-  }
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
 
-  #profilePopup {
-    display: none;
-    position: absolute;
-    top: 100%; /* Position below the button */
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+#profileButton:hover {
+  background-color: #e0e0e0;
+}
+
+#profilePopup {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the button */
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #profilePopup ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 #profilePopup li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #profilePopup a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
