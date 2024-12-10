@@ -22,11 +22,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("http://localhost/user-side/assets/img/travelulu.jpg"); /* Path to your image */
+  background-image: url(/soft-eng2/user-side/assets/img/bg.jpg); /* Path to your image */
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
-  filter: blur(1px); /* Blur effect */
   z-index: -1; /* Ensure the blur effect stays behind the content */
 }
 

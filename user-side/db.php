@@ -1,9 +1,9 @@
 <?php
     // Establish connection
-    $conn = mysqli_connect("localhost", "root", "", "travellocadb");
+    $conn = mysqli_connect("localhost", "root", "1234", "traveloca");
 
-    // Check for connection errors
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+   // Check for connection errors
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
 ?>

@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
 
+:root {
+  --primary-color: #fff;
+  --secondary-color: #efefef;
+  --background-color: rgba(255, 255, 255, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,28 +19,33 @@ body {
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  padding: 0 10px;
+  padding: 0 20px;
+  background-image: url("http://localhost/user-side/assets/img/travelulu.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 body::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url("http://localhost/user-side/assets/img/travelulu.jpg");
-  background-position: center;
-  background-size: auto;
-  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
 }
 
 .wrapper {
-  width: 400px;
-  border-radius: 8px;
-  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 16px;
+  padding: 40px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 form {
@@ -44,42 +55,46 @@ form {
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
-  color: #fff;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .input-field {
   position: relative;
-  border-bottom: 2px solid #ccc;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .input-field label {
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
-  color: #fff;
+  transform: translateY(-50%) translateX(-50%);
+  color: var(--secondary-color);
   font-size: 16px;
   pointer-events: none;
-  transition: 0.15s ease;
+  transition: all 0.3s ease;
 }
 
 .input-field input {
   width: 100%;
-  height: 40px;
+  height: 45px;
   background: transparent;
-  border: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
   outline: none;
   font-size: 16px;
-  color: #fff;
+  color: var(--primary-color);
+  padding-left: 15px;
+  transition: all 0.3s ease;
 }
 
 .input-field input:focus~label,
 .input-field input:valid~label {
   font-size: 0.8rem;
   top: 10px;
-  transform: translateY(-120%);
+  transform: translateY(-120%) translateX(-50%);
+  color: var(--primary-color);
 }
 
 .forget {
@@ -87,11 +102,6 @@ h2 {
   align-items: center;
   justify-content: space-between;
   margin: 25px 0 35px 0;
-  color: #fff;
-}
-
-#remember {
-  accent-color: #fff;
 }
 
 .forget label {
@@ -104,49 +114,43 @@ h2 {
 }
 
 .wrapper a {
-  color: #efefef;
+  color: var(--secondary-color);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .wrapper a:hover {
-  text-decoration: underline;
+  color: #fff;
 }
 
 button {
-  background: #fff;
-  color: #000;
+  background: transparent;
+  color: var(--primary-color);
   font-weight: 600;
-  border: none;
+  border: 2px solid var(--primary-color);
   padding: 12px 20px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 16px;
-  border: 2px solid transparent;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  color: #fff;
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--background-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
-.register {
-  text-align: center;
-  margin-top: 30px;
-  color: #fff;
-}
 .register,
 .login {
   text-align: center;
   margin-top: 30px;
-  color: #fff;
+  color: var(--secondary-color);
 }
 
-/* Specific styling for the toggle links */
 .register a,
 .login a {
-  color: #efefef;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
 }
@@ -154,9 +158,4 @@ button:hover {
 .register a:hover,
 .login a:hover {
   text-decoration: underline;
-}
-
-/* Smooth transition between forms */
-.wrapper {
-  transition: height 0.3s ease;
 }
