@@ -81,10 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['signup'])) {
                 <div class="card">
                     <div class="card-header text-center">
                         <ul class="nav nav-tabs card-header-tabs" id="auth-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
-                                    aria-controls="login" aria-selected="true">Login</a>
-                            </li>
                         </ul>
                     </div>
                     <div class="card-body">

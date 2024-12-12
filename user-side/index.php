@@ -52,79 +52,54 @@ session_start();
     </nav>
     </header>
     <section class="hero-section">
-      <div class="hero">
-        <h2>Welcome! to Puerto Princesa Traveloca</h2>
-        <p>
-          travel and find the best place to stay in Puerto Princesa City, Palawan
-
-        </p>
-        <div class="buttons">
-          <a href="#" class="join">Join Now</a>
-          <a href="#" class="learn">Learn More</a>
-        </div> 
-      </div>
-      <!-- <div class="container-fluid p-0 mt-5">
-        <section id="welcome1" class="full-height section1 d-flex flex-column align-items-center justify-content-between text-white bg-light">
-            <div class="carousel slide" data-ride="carousel" id="heroCarousel">
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/travel.png" class="d-block w-100" alt="...">
-                </div>
-                </div>
-            </div>
-        </section> -->
+  <div class="hero">
+    <h2>Welcome! to Puerto Princesa Traveloca</h2>
+    <p>
+      Travel and find the best place to stay in Puerto Princesa City, Palawan.
+    </p>
+    <div class="buttons">
+      <a href="#" class="join">Learn More</a>
     </div>
-    </section>
+  </div>
 
-    <div class="container-fluid p-0 mt-5">
-        <section id="welcome1" class="full-height section1 d-flex flex-column align-items-center justify-content-between text-white bg-light">
-            <div class="carousel slide" data-ride="carousel" id="heroCarousel">
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/travel-agent.png" class="d-block w-100" alt="...">
-                </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-            <section id="pictures" class="container mt-5">
-                <h2>Explore Puerto Princesa</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                    <img src="assets/img/traveloca.png" class="img-fluid" alt="Image 1">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                    <img src="assets/img/suitcase.png" class="img-fluid" alt="Image 2">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                    <img src="assets/img/takol.jpg" class="img-fluid" alt="Image 3">
-                    </div>
-                </div>
-            </section>
-
-            <section id="about" class="container mt-5">
-                <h2>About Puerto Princesa Traveloca</h2>
-                <p>
-                    Puerto Princesa Traveloca is a leading online platform connecting travelers with a wide range of accommodation options in Puerto Princesa City, Palawan. We offer a user-friendly search experience to help you find the perfect place to stay, from budget-friendly transient houses to luxurious hotels and resorts. 
-                </p>
-                <p>
-                    Our platform provides detailed information on each property, including photos, amenities, and guest reviews. You can also easily book your accommodation online with secure payment options. 
-                </p>
-            </section>
-
-    <div class="text-container d-flex flex-column align-items-center" style="color: black;">
-                    <h1 style="font-weight: bold;">Discover your best stay</h1>
-                    <h4>At Puerto Princesa Traveloca</h4>
-                    <a href="#about" class="pt-3"><button class="btn btn-success">Find out more</button></a>
-    </div>
-
-    <footer class="bg-light py-3">
-        <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Copyright &copy; 2024 - Puerto Princesa Traveloca</div>
+  <div class="container-fluid p-0 mt-5">
+    <section id="welcome1" class="full-height section1 d-flex flex-column align-items-center justify-content-between text-white bg-light">
+      <div class="carousel slide" data-ride="carousel" id="heroCarousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/travelers.png" alt="Travelers" style="width: auto; height: 460px;">
+          </div>
         </div>
-    </footer>
-
+      </div>
+    </section>
+  </div>
+</section>
+  <section class="hero-section">
+  <div class="hero">
+    <h2>Puerto Princesa City</h2>
+    <p class="text-muted text-justify pt-3">
+Puerto Princesa City, Palawan, the Philippines' largest city at 253,982 hectares, is known for its diverse ecosystems, including rainforests, mangroves, and coastal areas. It is divided into the East Coast, facing the Sulu Sea, and the mountainous West Coast, near the South China Sea.
+A key natural attraction is the Puerto Princesa Subterranean River National Park, a UNESCO World Heritage Site since 1999, featuring an 8.2-kilometer underground river and endemic wildlife.
+While rich in natural resources, the city emphasizes sustainable management to protect biodiversity, promote eco-tourism, and maintain quality of life, guided by Republic Act 7611. Conservation efforts aim to balance development with resource preservation for future generations.</p>
+  </div>
+  <div class="container-fluid p-0 mt-5">
+    <section id="welcome1" class="full-height section1 d-flex flex-column align-items-center justify-content-between text-white bg-light">
+      <div class="carousel slide" data-ride="carousel" id="heroCarousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/ppc.jpg" alt="Travelers" style="width: auto; height: 350px;">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </section>
+        <footer class="bg-light py-3">
+            <div class="container px-4 px-lg-5">
+                <div class="small text-right text-muted">Copyright &copy; 2024 - Puerto Princesa Traveloca</div>
+            </div>
+        </footer>
+        </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> 
     <script src="js/scripts.js" defer></script>
