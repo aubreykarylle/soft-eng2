@@ -4,6 +4,10 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e4e2e6, #2575fc); /* Gradient from blue to purple */
+    margin: 0;
+    padding: 0;
+    color: #fff; /* Ensure text is readable on the gradient */
 }
 
 .actives {
@@ -25,29 +29,11 @@ body {
     width: 100%;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent navbar for contrast */
 }
 
 .navbar.scrolled {
     top: -80px; /* Adjust this value to match your navbar height */
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-.actives {
-    border-bottom: 3px solid #0e3825;
-}
-
-.full-height {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .icon {
@@ -71,34 +57,21 @@ body {
     max-width: 200px;
     transition: all 0.3s ease;
 }
-/* Hide the navbar when scrolled down */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: top 0.3s ease-in-out;
-}
-
-.navbar.scrolled {
-    top: -80px; /* Adjust this value to match your navbar height */
-}
 
 #profileButton {
-    background-color: #f0f0f0;
+    background-color: #0f0f0f;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-  }
+}
  
 #profileButton:hover {
     background-color: #e0e0e0;
-  }
+}
 
-  #profilePopup {
+#profilePopup {
     display: none;
     position: absolute;
     top: 100%; /* Position below the button */
@@ -122,4 +95,11 @@ body {
 #profilePopup a {
     text-decoration: none;
     color: #333;
+}
+
+.bg-light {
+    background: linear-gradient(135deg, #4a90e2, #9b59b6) !important; /* Gradient from blue to purple */
+    color: white; /* Optional: Set text color to ensure readability */
+    padding: 20px; /* Add some padding for visual spacing */
+    border-radius: 5px; /* Optional: Add rounded corners for better design */
 }

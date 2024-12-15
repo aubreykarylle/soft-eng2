@@ -32,8 +32,9 @@ $conn->close();
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@350;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
     <link href="css/lodge.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+   
 </head>
 
 <body id="page-top">

@@ -81,52 +81,42 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['signup'])) {
                 <div class="card">
                     <div class="card-header text-center">
                         <ul class="nav nav-tabs card-header-tabs" id="auth-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
-                                    aria-controls="login" aria-selected="true">Login</a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content" id="auth-tabs-content">
                             <!-- Login Form -->
                             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                <h3>Login</h3>
-                                <form method="POST" action="login.php">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" required>
+                                <h3>Log in</h3>
+                                <form method="POST" action="">
+                                    <div class="input-container">
+                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" name="password" required>
+                                    <div class="input-container">
+                                        <input type="password" class="form-control" name="password" placeholder="Enter password" required>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-block" name="login">Login</button>
+                                    <button type="submit" class="submit" name="login">Log In</button>
                                 </form>
-                                <div class="register-link mt-3">
-                                    Don’t have an account? <a href="#signup" data-toggle="tab">Register Here</a>
-                                </div>
+                                <p class="signup-link">
+                                    No account? <a href="#signup" data-toggle="tab">Sign up</a>
+                                </p>
                             </div>
 
                             <!-- Signup Form -->
                             <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
                                 <h3>Register</h3>
-                                <form method="POST" action="login.php">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" required>
+                                <form method="POST" action="">
+                                    <div class="input-container">
+                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" name="password" required>
+                                    <div class="input-container">
+                                        <input type="password" class="form-control" name="password" placeholder="Enter password" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="confirm_password">Confirm Password</label>
-                                        <input type="password" class="form-control" name="confirm_password" required>
-                                        <!-- Error message will appear here -->
-                                        <span id="password-error"></span>
+                                    <div class="input-container">
+                                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm password" required>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-block" name="signup">Register</button>
+                                    <button type="submit" class="submit" name="signup">Register</button>
                                 </form>
                                 <p class="mt-3">Already have an account? <a href="#login" data-toggle="tab">Login Here</a></p>
                             </div>

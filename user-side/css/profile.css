@@ -4,6 +4,15 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* Global Styles for Headings */
+h2, h3 {
+    font-size: 20px !important;  /* Force the font size to 20px */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Ensure color is consistent */
 }
 
 /* Profile Container */
@@ -12,7 +21,7 @@ body {
     margin: 20px auto;
     padding: 30px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
@@ -24,10 +33,13 @@ body {
 }
 
 .profile-item {
-    flex: 1 1 300px;
-    padding: 20px;
+    flex: 1 1 calc(50% - 20px); /* Two columns with space between */
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 /* Upload Form */
@@ -42,29 +54,55 @@ body {
 label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 input, textarea, select {
-    width: 100%;
-    padding: 10px;
+    width: 85% !important;
+    padding: 5px !important;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
 }
 
 .checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 15px; /* Space between checkboxes */
+    max-width: 400px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the grid */
+    text-align: center; /* Align text to the center */
 }
+.checkbox-group label {
+    display: flex;
+    flex-direction: column; /* Stack checkbox and text vertically */
+    align-items: center; /* Center align horizontally */
+    font-weight: bold; /* Make text bold */
+    font-size: 14px; /* Set font size for clarity */
+    color: #333; /* Darker text color for better contrast */
+}
+.checkbox-group input[type="checkbox"] {
+    margin-bottom: 5px; /* Add space between checkbox and text */
+    transform: scale(1.2); /* Make the checkbox slightly larger */
+}
+
 
 button[type="submit"] {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: px 15px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 /* Uploaded Images */
@@ -79,58 +117,74 @@ button[type="submit"] {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Alerts */
 .alert.alert-warning {
-    background-color: #ffddcc;
+    background-color: #fff4e6;
     border: 1px solid #ffc107;
     color: #856404;
     padding: 15px;
     margin-bottom: 20px;
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
+    border-radius: 5px;
 }
 
+/* Buttons */
 .btn.btn-primary {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 5px;
+    padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 14px; /* Adjust font size as needed */
+    font-size: 14px;
 }
 
+/* Overlay Styling */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
 
-/* back  */
-button {
-    display: flex;
-    height: 3em;
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    background-color: #eeeeee4b;
-    border-radius: 3px;
-    letter-spacing: 1px;
-    transition: all 0.2s linear;
-    cursor: pointer;
+}
+
+/* Hidden Post Form Styling */
+#post-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    max-height: 90%;
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 20;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button Styling */
+#close-post-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
     border: none;
-    background: #fff;
-   }
-   
-   button > svg {
-    margin-right: 5px;
-    margin-left: 5px;
     font-size: 20px;
-    transition: all 0.4s ease-in;
-   }
-   
-   button:hover > svg {
-    font-size: 1.2em;
-    transform: translateX(-5px);
-   }
-   
-   button:hover {
-    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
-    transform: translateY(-2px);
-   }
+    cursor: pointer;
+    color: #000;
+}
+
+/* Adjust padding for body when the form is open  */
+body.form-open {
+    overflow: hidden; /* Prevent body scrolling when form is open */
+}

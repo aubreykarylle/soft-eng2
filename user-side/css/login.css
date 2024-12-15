@@ -4,6 +4,7 @@
   --primary-color: #fff;
   --secondary-color: #efefef;
   --background-color: rgba(255, 255, 255, 0.15);
+  --button-color: #4F46E5; /* Added color for buttons */
 }
 
 * {
@@ -48,24 +49,45 @@ body::before {
   transition: all 0.3s ease;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+/* Form Styling */
+.form {
+  background-color: #fff;
+  display: block;
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: var(--primary-color);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
 }
 
-.input-field {
+.input-container {
   position: relative;
-  margin: 20px 0;
+  margin-bottom: 1rem;
 }
 
-.input-field label {
+.input-container input {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding-right: 3rem;
+  outline: none;
+}
+
+.input-container label {
   position: absolute;
   top: 50%;
   left: 0;
@@ -76,27 +98,45 @@ h2 {
   transition: all 0.3s ease;
 }
 
-.input-field input {
-  width: 100%;
-  height: 45px;
-  background: transparent;
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
-  outline: none;
-  font-size: 16px;
-  color: var(--primary-color);
-  padding-left: 15px;
-  transition: all 0.3s ease;
-}
-
-.input-field input:focus~label,
-.input-field input:valid~label {
+.input-container input:focus~label,
+.input-container input:valid~label {
   font-size: 0.8rem;
   top: 10px;
   transform: translateY(-120%) translateX(-50%);
   color: var(--primary-color);
 }
 
+.submit {
+  display: block;
+  padding: 12px 20px;
+  background-color: var(--button-color);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #3b38d6; /* Darker shade for hover */
+}
+
+.signup-link {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+
+/* Forget password section */
 .forget {
   display: flex;
   align-items: center;
@@ -123,24 +163,6 @@ h2 {
   color: #fff;
 }
 
-button {
-  background: transparent;
-  color: var(--primary-color);
-  font-weight: 600;
-  border: 2px solid var(--primary-color);
-  padding: 12px 20px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background: var(--background-color);
-  color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-
 .register,
 .login {
   text-align: center;
@@ -158,4 +180,22 @@ button:hover {
 .register a:hover,
 .login a:hover {
   text-decoration: underline;
+}
+
+button {
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--background-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }

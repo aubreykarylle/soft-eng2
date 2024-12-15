@@ -154,9 +154,12 @@ $conn->close();
         <div class="text-center">
             <button class="btn btn-primary" id="create-post-btn">Create Post</button>
         </div>
+          <!-- Background Overlay -->
+          <div id="overlay"></div>
 
         <!-- Hidden Post Form -->
         <div id="post-form" class="mt-4">
+            <button class="btn-close" id="close-post-form">&times;</button>
             <form action="profile.php" method="post" autocomplete="off" enctype="multipart/form-data">
                 <table class="table table-borderless">
                     <tr>
@@ -228,10 +231,20 @@ $conn->close();
     </div>
 
     <script>
-        // Show the form when the "Create Post" button is clicked
+        // Show the form and overlay when the "Create Post" button is clicked
         document.getElementById('create-post-btn').addEventListener('click', function () {
             document.getElementById('post-form').style.display = 'block';
-            this.style.display = 'none'; // Hide the button
+            document.getElementById('overlay').style.display = 'block';
+        });
+        // Hide the form and overlay when the close button is clicked
+        document.getElementById('close-post-form').addEventListener('click', function () {
+            document.getElementById('post-form').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+        // Close the form and overlay when the overlay is clicked
+        document.getElementById('overlay').addEventListener('click', function () {
+            document.getElementById('post-form').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
         });
     </script>
 </body>

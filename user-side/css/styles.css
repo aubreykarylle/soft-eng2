@@ -1289,7 +1289,7 @@ progress {
   }
   .col-lg-6 {
     flex: 0 0 auto;
-    width: 50%;
+    width: 44%;
   }
   .col-lg-7 {
     flex: 0 0 auto;
@@ -8158,7 +8158,9 @@ textarea.form-control-lg {
 .bg-light {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  
 }
+
 
 .bg-dark {
   --bs-bg-opacity: 1;
