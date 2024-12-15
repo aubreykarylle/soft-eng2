@@ -66,77 +66,69 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['signup'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Register - Puerto Princesa Traveloca</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login / Register - Puerto Princesa Traveloca</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8 col-sm-10">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <ul class="nav nav-tabs card-header-tabs" id="auth-tabs" role="tablist">
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <div class="tab-content" id="auth-tabs-content">
-                            <!-- Login Form -->
-                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                <h3>Login</h3>
-                                <form method="POST" action="login.php">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" name="password" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-block" name="login">Login</button>
-                                </form>
-                                <div class="register-link mt-3">
-                                    Don’t have an account? <a href="#signup" data-toggle="tab">Register Here</a>
-                                </div>
-                            </div>
-
-                            <!-- Signup Form -->
-                            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-                                <h3>Register</h3>
-                                <form method="POST" action="login.php">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" name="password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="confirm_password">Confirm Password</label>
-                                        <input type="password" class="form-control" name="confirm_password" required>
-                                        <!-- Error message will appear here -->
-                                        <span id="password-error"></span>
-                                    </div>
-                                    <button type="submit" class="btn btn-success btn-block" name="signup">Register</button>
-                                </form>
-                                <p class="mt-3">Already have an account? <a href="#login" data-toggle="tab">Login Here</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="wrapper">
+<div class="card login-size">
+      <!-- Login Form -->
+  <div class="login-form"> 
+    <h2>Login</h2>
+    <div class="input-group">
+      <i class="fas fa-envelope"></i>
+      <input type="email" placeholder="Email">
     </div>
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input type="password" placeholder="Password">
+    </div>
+    <a href="#" class="forgot-password">Forgot Password?</a>
+    <button class="btn btn-login">Login</button>
+    <p class="toggle-text">Don't have an account? <a href="#" class="toggle">Register Now</a></p>
+  </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="js/login.js" defer></script>
-    <script src="js/scripts.js" defer></script>
+    <div class="content">
+      <!-- Registration Form -->
+      <h2>Registration</h2>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="First Name">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Last Name">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="Email">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password">
+      </div>
+      <button class="btn">Register</button>
+      <p class="toggle-text">Already have an account? <a href="#" class="toggle">Login Now</a></p>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script> 
+document.querySelectorAll('.toggle').forEach(toggle => {
+   toggle.addEventListener('click', () => {
+      document.querySelector('.wrapper').classList.toggle('flip');
+   });
+});
+
+</script>
 </body>
 
 </html>
